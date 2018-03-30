@@ -2,10 +2,11 @@
 
 # User
   - int id => boolean existance : Existance utilisateur par son id
-  - int solde => boolean soldeSuffisant : L'utilisateur a-il un solde suppérieur à la valeur?
+  - int solde => boolean soldeSuffisant : L'utilisateur a-t-il un solde suppérieur à la valeur?
 
 # Possessions
   - int idCarte, int idUser => boolean cartePossedee : L'utilisateur possède la carte?
+  - int idCarte => boolean energieSuffisante : La carte a-t-elle suffisament d'énergie?
   
 
 # Cards
