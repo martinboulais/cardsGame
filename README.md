@@ -3,6 +3,8 @@
 # User
   - int id => boolean existance : Existance utilisateur par son id
   - int idUser, int price => boolean soldeSuffisant : L'utilisateur a-t-il assez d'argent pour acheter cette carte?
+  - int id, String statut("achat" ou "vendeur")==> Mise à jour de solde de client
+
 
 # Possessions
   - int idCarte, int idUser => boolean cartePossedee : L'utilisateur possède la carte?
