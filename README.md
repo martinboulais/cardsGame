@@ -2,7 +2,7 @@
 
 # User
   - int id => boolean existance : Existance utilisateur par son id
-  - int solde => boolean soldeSuffisant : L'utilisateur a-t-il un solde suppérieur à la valeur?
+  - int idUser, int price => boolean soldeSuffisant : L'utilisateur a-t-il assez d'argent pour acheter cette carte?
 
 # Possessions
   - int idCarte, int idUser => boolean cartePossedee : L'utilisateur possède la carte?
@@ -11,6 +11,7 @@
 
 # Cards
   - int id => boolean existance : La carte existe dans le modèle?
+  - int idCard => Card InfoCard : Renvoie toutes les infos d'une carte.
 
 # Room
 
