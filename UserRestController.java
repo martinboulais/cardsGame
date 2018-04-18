@@ -65,20 +65,20 @@ public class UserRestController {
 		return UserService.getUserByName(name);
 
 	}*/
+	//
 	@RequestMapping("/users/{id}/{solde}")
-	public String Poss(@PathVariable String id, @PathVariable int solde) {
-		int valeur=100;
-		String retour="NotOk";
-		//User user2=UserService.getUser(id);
-				if (solde>=valeur) {
-					retour="ok";
+	public Boolean soldeSuffisant(@PathVariable String id, @PathVariable int solde) {
+		User user=UserService.getUser(id); 
+		Boolean retour=False;
+				if (user.getsolde()>=solde) {
+					retour=True;
 				}
 		return retour; 
 	}
 	
 	@RequestMapping("users/{id}/name")
-	public String findUser(@PathVariable String id) {
-		String retour="false";
+	public Boolean findUser(@PathVariable String id) {
+		Boolean retour="false";
 		try {
 			User user=UserService.getUser(id); 
 			if (!(user.equals(null))) {
@@ -88,6 +88,19 @@ public class UserRestController {
 			}
 
 	}
-	
+	@RequestMapping("users/{id}/{boolean})
+	public void MiseAJourSolde(@Pathvariable String id, @Pathvariable String boolean){
+		User user=UserService.getUser(id); 
+		int NewSolde=user.getsolde();
+		int valeur=100; // prix d'une carte pour tester
+		if (boolean.equals('1')){
+			solde-=prix;
+			user.setsolde(solde);
+		else if (boolean.equals('0')){
+			solde+=prix;
+			user.setsolde(solde);
+		}		
+			
+	}
 
 }
