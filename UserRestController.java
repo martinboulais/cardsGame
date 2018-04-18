@@ -88,7 +88,7 @@ public class UserRestController {
 			}
 
 	}
-	@RequestMapping("users/{id}/{boolean})
+	@RequestMapping("users/{id}/{boolean}")
 	public void MiseAJourSolde(@Pathvariable String id, @Pathvariable String boolean){
 		User user=UserService.getUser(id); 
 		int NewSolde=user.getsolde();
