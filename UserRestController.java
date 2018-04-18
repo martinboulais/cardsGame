@@ -96,6 +96,7 @@ public class UserRestController {
 		if (boolean.equals('1')){
 			solde-=prix;
 			user.setsolde(solde);
+		}
 		else if (boolean.equals('0')){
 			solde+=prix;
 			user.setsolde(solde);
