@@ -41,7 +41,7 @@ public class UserService {
 		userRepository.delete(Integer.valueOf(id));
 	}
 
-	public List<User> getUserByColor(String name) {
+	public List<User> getUserByName(String name) {
 		return userRepository.findByName(name);
 	}
 
