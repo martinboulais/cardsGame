@@ -76,28 +76,28 @@ public class UserRestController {
 		return retour; 
 	}
 	
-	@RequestMapping("users/{id}/name")
+	@RequestMapping("users/{id}/{id}")
 	public Boolean findUser(@PathVariable String id) {
-		Boolean retour="false";
+		Boolean retour=False;
 		try {
 			User user=UserService.getUser(id); 
 			if (!(user.equals(null))) {
-				retour="cet utlisateur existe";
+				retour=True;
 			}}catch (Exception e) {
-				retour="false";
+				retour=True;
 			}
-
+		return retour;
 	}
 	@RequestMapping("users/{id}/{boolean}")
 	public void MiseAJourSolde(@Pathvariable String id, @Pathvariable String boolean){
 		User user=UserService.getUser(id); 
 		int NewSolde=user.getsolde();
 		int valeur=100; // prix d'une carte pour tester
-		if (boolean.equals('1')){
+		if (boolean.equals('1')){ // 1: achat
 			solde-=prix;
 			user.setsolde(solde);
 		}
-		else if (boolean.equals('0')){
+		else if (boolean.equals('0')){ // O: vente
 			solde+=prix;
 			user.setsolde(solde);
 		}		
