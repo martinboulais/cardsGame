@@ -3,7 +3,7 @@
 # User
   - int id => boolean existance : Existance utilisateur par son id
   - int idUser, int valeur => boolean soldeSuffisant : L'utilisateur a-t-il une valeur de solde supérieure à celle passée en param?
-  - int id, boolean statut("achat" ou "vendeur")==> Mise à jour de solde de client
+  - int id, boolean statut(1 => "achat" 0 => "vente")==> Mise à jour de solde de client
 
 
 # Possessions
