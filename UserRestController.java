@@ -103,5 +103,26 @@ public class UserRestController {
 		}		
 			
 	}
+	
+	@RequestMapping("users/{id1}/{id2}/{montant}")
+	public void VirementMontant(@Pathvariable String id1,@Pathvariable String id1, @Pathvariable int montant,){
+		Boolean retour=False;
+		//les utilisateurs qui correspondent à id1 et id2
+		User user1=UserService.getUser(id1);
+		User user2=UserService.getUser(id2); 
+		// on recupère leurs soldes
+		int NewSolde1=user1.getsolde();
+		int NewSolde2=user2.getsolde();
+		// on effectue le virement
+		NewSolde1-=montant;
+		NewSolde2+=montant;
+		// on met la nouvelle valeur de solde;
+		user1.setsolde(NewSolde1);
+		user2.setsolde(NewSolde2);
+		if ((NewSolde1==user1.getsolde())&&(NewSolde2==user2.getsolde())){
+			retour=True;
+		}
+		return retour;
+	}
 
 }
