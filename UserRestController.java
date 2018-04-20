@@ -65,7 +65,7 @@ public class UserRestController {
 		return UserService.getUserByName(name);
 
 	}*/
-	//
+	//Cette méthode permet de savoir si le solde est suffisant ou pas
 	@RequestMapping("/users/{id}/{solde}")
 	public Boolean soldeSuffisant(@PathVariable String id, @PathVariable int solde) {
 		User user=UserService.getUser(id); 
@@ -75,7 +75,7 @@ public class UserRestController {
 				}
 		return retour; 
 	}
-	
+	// cette méthode permet d'affirmer si l'utilisateur existe dans la base ou pas
 	@RequestMapping("users/{id}/{id}")
 	public Boolean findUser(@PathVariable String id) {
 		Boolean retour=False;
@@ -88,6 +88,7 @@ public class UserRestController {
 			}
 		return retour;
 	}
+	// Cette méthode permet de mettre à jour le solde de l'utilisateur
 	@RequestMapping("users/{id}/{boolean}")
 	public void MiseAJourSolde(@Pathvariable String id, @Pathvariable String boolean){
 		User user=UserService.getUser(id); 
@@ -103,7 +104,7 @@ public class UserRestController {
 		}		
 			
 	}
-	
+	// Cette méthode permet de faire un virement entre deux compte d'utilisateur
 	@RequestMapping("users/{id1}/{id2}/{montant}")
 	public void VirementMontant(@Pathvariable String id1,@Pathvariable String id1, @Pathvariable int montant,){
 		Boolean retour=False;
